@@ -1,0 +1,217 @@
+/* Home.css */
+
+.home-container {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  padding: 0;
+  margin: 0;
+  background-color: #f5f7fa;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b132b;
+  color: white;
+  padding: 1rem 2rem;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.user-icon {
+  cursor: pointer;
+}
+
+.hero {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #1c2541;
+  color: white;
+}
+
+.hero h1 {
+  font-size: 2.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero p {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+}
+
+.hero input {
+  width: 60%;
+  padding: 0.75rem;
+  border: none;
+  border-radius: 8px;
+  max-width: 400px;
+  outline: none;
+}
+
+.cards-container {
+  width: 85%;
+  margin: 40px auto; /* ✅ Centers the container */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 2rem;
+}
+.card {
+  margin: 16px 10px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  width: 300px;
+  transition: transform 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.tech-image {
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+}
+
+.card-info {
+  padding: 1rem;
+}
+
+.user-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.user-photo {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.user-details h3 {
+  margin: 0;
+}
+
+.location {
+  color: gray;
+  font-size: 0.9rem;
+}
+
+.skills {
+  margin: 0.5rem 0;
+}
+.position {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: #555;
+  margin: 2px 0;
+}
+
+.skill-tag {
+  background-color: #e0e7ff;
+  color: #3730a3;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.8rem;
+  margin-right: 6px;
+  display: inline-block;
+  margin-bottom: 6px;
+}
+
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  padding: 20px;
+}
+
+.card {
+  width: 260px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: #ff7e5f;
+}
+
+/* Info inside the card */
+.card-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.card-info h3 {
+  font-size: 20px;
+  color: #333;
+}
+
+.card-info .profession {
+  font-size: 14px;
+  color: #6c63ff;
+  font-weight: 500;
+}
+
+.card-info .location {
+  font-size: 14px;
+  color: #888;
+}
+
+.view-btn {
+  margin-top: 12px;
+  padding: 10px 15px;
+  border-radius: 6px;
+  background-color: #6c63ff;
+  color: white;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.view-btn:hover {
+  background-color: #574fd6;
+}
+
+.card-info h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: #333;
+}
+
+.card-info p {
+  margin: 8px 0;
+  font-size: 0.95rem;
+  color: #666;
+}
+.logout-btn {
+  background-color: #ff4d4f;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.logout-btn:hover {
+  background-color: #d9363e;
+}
