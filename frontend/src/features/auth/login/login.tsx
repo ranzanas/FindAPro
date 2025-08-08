@@ -1,5 +1,5 @@
 import { useState, type FormEvent, type ChangeEvent } from "react";
-import loginPhoto from "../../../assets/loginPhoto.jpg";
+import loginPhoto from "../../../assets/images/loginPhoto.jpg";
 
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";

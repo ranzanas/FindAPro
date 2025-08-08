@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./profilePage.css";
+import userFemale from "../../assets/images/userFemale.jpg";
 
 interface IUser {
   _id: string;
@@ -14,7 +15,7 @@ interface IUser {
 }
 
 export default function Profile() {
-  const { id } = useParams(); // Get user id from URL
+  const { id } = useParams();
   const [user, setUser] = useState<IUser | null>(null);
 
   useEffect(() => {
@@ -41,24 +42,28 @@ export default function Profile() {
 
   return (
     <div className="profile-container">
-      <h2>
-        {user.firstName} {user.lastName}
-      </h2>
-      <p>
-        <strong>Email:</strong> {user.email}
-      </p>
-      <p>
-        <strong>Username:</strong> {user.username}
-      </p>
-      <p>
-        <strong>Profession:</strong> {user.profession ?? "Not listed"}
-      </p>
-      <p>
-        <strong>Address:</strong> {user.address ?? "Not available"}
-      </p>
-      <p>
-        <strong>Phone:</strong> {user.phone ?? "Not available"}
-      </p>
+      <div className="basicInfo">
+        <div className="personalInfo">
+          <div className="imageSection">
+            <img src={userFemale} alt="" />
+          </div>
+          <div className="detailsSection">
+            <h1>Ranjana Silwal</h1>
+            <p>FullStack Developer</p>
+            <p>Kamalpokhari, Kathmandu</p>
+          </div>
+        </div>
+        <div className="contactInfo">
+          <h1>Contact Information</h1>
+
+          <p>ranjanasilwal4@gmail.com</p>
+
+          <p>9842557384</p>
+        </div>
+      </div>
+      <div className="experienceSection">
+        <h1>Experience</h1>
+      </div>
     </div>
   );
 }

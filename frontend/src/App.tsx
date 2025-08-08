@@ -43,7 +43,14 @@ function App() {
           </LoginGuard>
         }
       />
-      <Route path="/profile/:id" element={<Profile />} />
+      <Route
+        path="/profile/:id"
+        element={
+          <AuthGuard>
+            <Profile />
+          </AuthGuard>
+        }
+      />
     </Routes>
   );
 }
