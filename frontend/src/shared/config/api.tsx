@@ -11,6 +11,11 @@ export const registerApi = (data: {
   username: string;
   password: string;
   email: string;
+  phone: string;
+  address: string;
+  profession: string;
+  firstName: string;
+  lastName: string;
 }) => {
   return axiosInstance.post("/auth/register", data);
 };
