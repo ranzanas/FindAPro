@@ -1,6 +1,4 @@
 import { useState, type FormEvent, type ChangeEvent } from "react";
-import loginPhoto from "../../../assets/images/loginPhoto.jpg";
-
 import { Link, useNavigate } from "react-router-dom";
 import "./login.css";
 import type { AxiosResponse } from "axios";
@@ -34,37 +32,42 @@ function Login() {
 
   return (
     <div className="login-wrapper">
-      <div className="login-box">
-        <div className="image-section">
-          <img src={loginPhoto} alt="Login" />
-        </div>
+      <div className="header">FindAPro</div>
+      <div className="loginBox">
+        <h1>Login</h1>
+        <form action="" className="loginForm" onSubmit={handleSubmit}>
+          <div className="inputPart">
+            <div className="detailSection">
+              <span>Username:</span>
+              <input
+                type="text"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+              />
+            </div>
+            <div className="detailSection">
+              <span>Password:</span>
+              <input
+                type="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+              />
+            </div>
+          </div>
 
-        <div className="form-section">
-          <form onSubmit={handleSubmit} className="login-form" action="">
-            <h2>Login</h2>
-            <input
-              onChange={handleChange}
-              name="username"
-              value={formData.username}
-              type="text"
-              placeholder="Username"
-            />
-            <input
-              onChange={handleChange}
-              name="password"
-              value={formData.password}
-              type="text"
-              placeholder="Password"
-            />
-            <button>Submit</button>
-            <p>
-              Don't have an account?
-              <Link className="register-link" to="/register">
-                Register
-              </Link>
-            </p>
-          </form>
-        </div>
+          <div className="buttonPart">
+            <button type="submit">Log in</button>
+          </div>
+          <br />
+          <p>
+            Don't have an account?
+            <Link className="login-link" to="/register">
+              Register
+            </Link>
+          </p>
+        </form>
       </div>
     </div>
   );
