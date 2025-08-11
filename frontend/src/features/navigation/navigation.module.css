@@ -1,0 +1,60 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Playwrite+AU+QLD:wght@100..400&display=swap");
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #0b132b;
+  color: white;
+  padding: 1rem 4rem;
+  height: 75px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  font-family: "Playwrite AU QLD", cursive;
+}
+
+.navlist {
+  display: flex;
+  align-items: center;
+  gap: 90px;
+}
+
+.navlist ul {
+  display: flex;
+  list-style: none;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.navlist ul li {
+  cursor: pointer;
+  font-size: 18px;
+  transition: color 0.3s ease;
+  font-family: "Lato";
+  color: white;
+}
+
+.navlist ul li:hover {
+  color: #3a506b;
+}
+
+.logoutBtn {
+  background-color: #3a506b;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  width: 100px;
+  height: 40px;
+  font-size: 18px;
+}
+
+.logoutBtn:hover {
+  background-color: #1c2541;
+}

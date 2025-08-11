@@ -3,6 +3,7 @@ import "./homepage.css";
 import { useNavigate } from "react-router-dom";
 import { searchUsersApi } from "../../shared/config/api";
 import type { AxiosResponse } from "axios";
+import Navigation from "../navigation/navigation";
 
 interface IUser {
   _id: string;
@@ -22,12 +23,6 @@ export default function Home() {
   const [users, setUsers] = useState<IUser[]>([]);
   const navigate = useNavigate();
 
-  const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("currentUser");
-    navigate("/login");
-  };
-
   useEffect(() => {
     searchUsersApi(search)
       .then((res: AxiosResponse<IUserResponse>) => {
@@ -40,13 +35,7 @@ export default function Home() {
 
   return (
     <div className="home-container">
-      <nav className="navbar">
-        <div className="logo">FindAPro</div>
-        <button className="logout-btn" onClick={handleLogout}>
-          Logout
-        </button>
-      </nav>
-
+      <Navigation />
       <header className="hero">
         <h1>Find the Perfect Professional</h1>
         <p>
