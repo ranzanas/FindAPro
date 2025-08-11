@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useEffect, useState, type ChangeEvent } from "react";
 import "./homepage.css";
 import { useNavigate } from "react-router-dom";
 import { searchUsersApi } from "../../shared/config/api";
@@ -37,16 +37,19 @@ export default function Home() {
     <div className="home-container">
       <Navigation />
       <header className="hero">
-        <h1>Find the Perfect Professional</h1>
+        <h1>Find the Right Talent, Right Now</h1>
         <p>
-          Discover talented professionals and explore their amazing portfolios
+          Join our platform to discover professionals from every field — ready
+          to help you move forward.
         </p>
         <input
           id="search"
           type="text"
           placeholder="Search professionals..."
           value={search}
-          onChange={(e) => setSearch(e.target.value)}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setSearch(e.target.value)
+          }
         />
       </header>
 
