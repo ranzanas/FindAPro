@@ -4,9 +4,7 @@ import User from "../models/user.model.js";
 export async function getUsers(req, res) {
   try {
     const { name } = req.query;
-
     let query = {};
-
     if (name) {
   const regex = new RegExp(name, "i");
 

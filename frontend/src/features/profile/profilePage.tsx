@@ -53,16 +53,6 @@ export default function Profile() {
             <p>Kamalpokhari, Kathmandu</p>
           </div>
         </div>
-        <div className="contactInfo">
-          <h1>Contact Information</h1>
-
-          <p>ranjanasilwal4@gmail.com</p>
-
-          <p>9842557384</p>
-        </div>
-      </div>
-      <div className="experienceSection">
-        <h1>Experience</h1>
       </div>
     </div>
   );
