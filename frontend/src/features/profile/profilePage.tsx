@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import "./profilePage.css";
 import userFemale from "../../assets/images/userFemale.jpg";
+import Experience from "../experience/experience";
 
 interface IUser {
   _id: string;
@@ -62,6 +63,15 @@ export default function Profile() {
             <button className="follow-btn">Follow</button>
           </div>
         </div>
+      </div>
+      <div className="main-section">
+        <div className="exp-wrapper">
+          <div className="experience-section">
+            <Experience />
+          </div>
+          <div className="contact-section"></div>
+        </div>
+        <div className="education-section"></div>
       </div>
     </div>
   );

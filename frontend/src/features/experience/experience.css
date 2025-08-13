@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.experience-card {
+  width: 100%;
+  border: 2px solid black;
+}
+.experience-header {
+  width: 100%;
+  padding: 10px 20px;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+}
+.addexp-btn {
+  padding: 6px 10px;
+  border-radius: 999px;
+  backdrop-filter: blur(4px);
+  font-size: 16px;
+  background: transparent;
+  border-color: rgba(255, 255, 255, 0.4);
+  color: white;
+  cursor: pointer;
+}
+.addexp-btn:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.expcard-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 12px 16px;
+}
+
+.exp-card {
+  width: 100%;
+  background-color: #1c2541;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-left: 4px solid #3a506b;
+  border-radius: 12px;
+  padding: 14px;
+  color: #fff;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.exp-card:hover {
+  transform: translateY(-2px);
+}
+
+.cards-info h3 {
+  font-size: 18px;
+  margin-bottom: 6px;
+}
+
+.cards-info p {
+  margin: 4px 0;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 18px;
+}
+
+.cards-info p:first-of-type {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 14px;
+  background-color: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  margin-bottom: 6px;
+}
+.cards-info p:nth-of-type(2) {
+  font-weight: 600;
+}
