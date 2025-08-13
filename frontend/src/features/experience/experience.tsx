@@ -34,7 +34,7 @@ export default function Experience() {
       <div className="expcard-container">
         {experience.map((exp) => (
           <div className="exp-card">
-            <div className="cards-info">
+            <div className="expcards-info">
               <h3>{exp.title}</h3>
               <p>{exp.workingDate}</p>
               <p>{exp.companyName}</p>

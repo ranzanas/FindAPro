@@ -50,18 +50,18 @@
   transform: translateY(-2px);
 }
 
-.cards-info h3 {
+.expcards-info h3 {
   font-size: 18px;
   margin-bottom: 6px;
 }
 
-.cards-info p {
+.expcards-info p {
   margin: 4px 0;
   color: rgba(255, 255, 255, 0.9);
   font-size: 18px;
 }
 
-.cards-info p:first-of-type {
+.expcards-info p:first-of-type {
   display: inline-block;
   padding: 2px 8px;
   border-radius: 999px;
@@ -70,6 +70,6 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 6px;
 }
-.cards-info p:nth-of-type(2) {
+.expcards-info p:nth-of-type(2) {
   font-weight: 600;
 }

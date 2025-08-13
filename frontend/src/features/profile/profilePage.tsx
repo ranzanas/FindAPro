@@ -69,7 +69,17 @@ export default function Profile() {
           <div className="experience-section">
             <Experience />
           </div>
-          <div className="contact-section"></div>
+          <div className="contact-section">
+            <div className="contact-header">
+              <h1>Contact</h1>
+            </div>
+            <div className="contact-info">
+              <ul>
+                <li>ranjanasilwal4@gmail.com</li>
+                <li>9842557384</li>
+              </ul>
+            </div>
+          </div>
         </div>
         <div className="education-section"></div>
       </div>

@@ -85,6 +85,7 @@
   display: flex;
   flex-direction: column;
   margin-top: 15px;
+  gap: 20px;
 }
 .exp-wrapper {
   width: 100%;
@@ -100,9 +101,22 @@
   width: 35%;
   height: 150px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), 0 0 8px rgba(58, 80, 107, 0.3);
+  padding: 15px;
+}
+.contact-header {
+  color: white;
+  margin-bottom: 10px;
+}
+.contact-info ul li {
+  list-style-type: none;
+  color: white;
+  font-size: 18px;
+  line-height: 1.7;
 }
 .education-section {
-  width: 100%;
+  width: 60%;
   height: 500px;
   border: 2px solid yellow;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), 0 0 8px rgba(58, 80, 107, 0.3);
+  margin-left: 25px;
 }
