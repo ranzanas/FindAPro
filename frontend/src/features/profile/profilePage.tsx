@@ -50,14 +50,16 @@ export default function Profile() {
         </div>
         <div className="details-section">
           <div className="name-section">
-            <h1>Ranjana Silwal</h1>
+            <h1>
+              {user.firstName} {user.lastName}
+            </h1>
           </div>
           <div className="profession-section">
-            <span className="profession">Fullstack Web Developer</span>
-            <span className="username">@ranjana01</span>
+            <span className="profession">{user.profession}</span>
+            <span className="username">@{user.username}</span>
           </div>
           <div className="address-section">
-            <span className="address">Kathmandu</span>
+            <span className="address">{user.address}</span>
           </div>
           <div className="actions">
             <button className="msg-btn">Message</button>
@@ -70,18 +72,20 @@ export default function Profile() {
           <div className="experience-section">
             <Experience />
           </div>
+
           <div className="contact-section">
             <div className="contact-header">
               <h1>Contact</h1>
             </div>
             <div className="contact-info">
               <ul>
-                <li>ranjanasilwal4@gmail.com</li>
-                <li>9842557384</li>
+                <li>{user.email}</li>
+                <li>{user.phone}</li>
               </ul>
             </div>
           </div>
         </div>
+
         <div className="education-section">
           <Education />
         </div>
