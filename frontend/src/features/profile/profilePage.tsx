@@ -42,15 +42,24 @@ export default function Profile() {
 
   return (
     <div className="profile-container">
-      <div className="basicInfo">
-        <div className="personalInfo">
-          <div className="imageSection">
-            <img src={userFemale} alt="" />
-          </div>
-          <div className="detailsSection">
+      <div className="profile-banner">
+        <div className="image-section">
+          <img src={userFemale} alt="" />
+        </div>
+        <div className="details-section">
+          <div className="name-section">
             <h1>Ranjana Silwal</h1>
-            <p>FullStack Developer</p>
-            <p>Kamalpokhari, Kathmandu</p>
+          </div>
+          <div className="profession-section">
+            <span className="profession">Fullstack Web Developer</span>
+            <span className="username">@ranjana01</span>
+          </div>
+          <div className="address-section">
+            <span className="address">Kathmandu</span>
+          </div>
+          <div className="actions">
+            <button className="msg-btn">Message</button>
+            <button className="follow-btn">Follow</button>
           </div>
         </div>
       </div>
