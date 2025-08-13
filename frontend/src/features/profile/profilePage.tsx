@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import "./profilePage.css";
 import userFemale from "../../assets/images/userFemale.jpg";
 import Experience from "../experience/experience";
+import Education from "../education/education";
 
 interface IUser {
   _id: string;
@@ -81,7 +82,9 @@ export default function Profile() {
             </div>
           </div>
         </div>
-        <div className="education-section"></div>
+        <div className="education-section">
+          <Education />
+        </div>
       </div>
     </div>
   );
