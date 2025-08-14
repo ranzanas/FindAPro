@@ -4,6 +4,7 @@ import "./profilePage.css";
 import userFemale from "../../assets/images/userFemale.jpg";
 import Experience from "../experience/experience";
 import Education from "../education/education";
+import axiosInstance from "../../shared/config/axiosinstance";
 
 interface IUser {
   _id: string;
@@ -21,21 +22,10 @@ export default function Profile() {
   const [user, setUser] = useState<IUser | null>(null);
 
   useEffect(() => {
-    const token = localStorage.getItem("token");
-
-    fetch(`http://localhost:3000/api/user/userList?name=${id}`, {
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
-      },
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        if (data.users.length > 0) {
-          setUser(data.users[0]);
-        } else {
-          console.warn("No user found with this ID");
-        }
+    axiosInstance
+      .get(`/user/userList?name=${id}`)
+      .then((res) => {
+        setUser(res.data.users[0]);
       })
       .catch((err) => console.error("Error fetching user:", err));
   }, [id]);
