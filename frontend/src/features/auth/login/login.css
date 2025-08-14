@@ -79,3 +79,6 @@
   background: rgb(25, 23, 23);
   font-weight: bolder;
 }
+.text-red {
+  color: red;
+}
