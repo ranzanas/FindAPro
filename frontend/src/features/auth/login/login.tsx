@@ -55,8 +55,7 @@ function Login() {
                     message: "Username should be more than 3 characters",
                   },
                 })}
-              />
-
+              />{" "}
               {errors.username && (
                 <div className="text-red">
                   {errors.username.message?.toString()}
@@ -69,12 +68,13 @@ function Login() {
                 type="password"
                 {...register("password", {
                   required: "Password is required",
-                  minLength: {
-                    value: 6,
-                    message: "Password must be atleast 6 characters long",
-                  },
                 })}
               />
+              {errors.password && (
+                <div className="text-red">
+                  {errors.password.message?.toString()}
+                </div>
+              )}
             </div>
           </div>
 
