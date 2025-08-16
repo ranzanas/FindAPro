@@ -66,7 +66,7 @@ function Login() {
                     message: "Username should be more than 3 characters",
                   },
                 })}
-              />{" "}
+              />
               {errors.username && (
                 <div className="text-red">
                   {errors.username.message?.toString()}
