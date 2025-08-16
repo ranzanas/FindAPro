@@ -4,6 +4,7 @@ import { useForm } from "react-hook-form";
 import "./login.css";
 import type { AxiosResponse } from "axios";
 import { loginApi } from "../../../shared/config/api";
+import { useState } from "react";
 //import Register from "../register/register";
 
 interface ILoginForm {
@@ -12,6 +13,7 @@ interface ILoginForm {
 }
 
 function Login() {
+  const [error, setError] = useState<string>("");
   //destructuring
   const {
     register,
@@ -28,6 +30,13 @@ function Login() {
         localStorage.setItem("currentUser", JSON.stringify(res.data.user));
         navigate("/home");
       })
+      .catch((err) => {
+        if (err.response && err.response.data) {
+          setError(err.response.data);
+        } else {
+          setError("Something went wrong. Please try again.");
+        }
+      })
       .finally(() => {
         reset();
       });
@@ -38,6 +47,8 @@ function Login() {
       <div className="header">FindAPro</div>
       <div className="loginBox">
         <h1>Login</h1>
+
+        {error && <div className="text-red">{error}</div>}
         <form action="" className="loginForm" onSubmit={handleSubmit(onSubmit)}>
           <div className="inputPart">
             <div className="detailSection">
