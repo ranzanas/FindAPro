@@ -1,6 +1,7 @@
 import express from 'express';
 import authRoutes from './routes/auth.route.js';
 import userRoutes from './routes/user.route.js';
+import profileRoutes from './routes/profile.route.js'
 import dotenv from "dotenv";
 import cors from 'cors'
 const app = express();
@@ -13,4 +14,5 @@ dotenv.config();
 app.use(express.json());
 app.use('/api/auth', authRoutes); //Prefix all routes
 app.use('/api/user', userRoutes);
+app.use('/api/profile', profileRoutes);
 export default app;
