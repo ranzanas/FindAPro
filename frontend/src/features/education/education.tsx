@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../../shared/config/axiosinstance";
 import "./education.css";
+import { Link } from "react-router-dom";
 
 interface IEducation {
   _id: string;
@@ -12,8 +13,8 @@ interface IEducation {
 }
 
 interface EducationProps {
-  userId: string; // whose education to show
-  canEdit?: boolean; // whether to show "Add Education" button
+  userId: string;
+  canEdit?: boolean;
 }
 
 export default function Education({ userId, canEdit = false }: EducationProps) {
@@ -22,9 +23,9 @@ export default function Education({ userId, canEdit = false }: EducationProps) {
 
   useEffect(() => {
     axiosInstance
-      .get(`/education/${userId}`) // 👉 adjust route to match your backend
+      .get(`profile/education/${userId}`)
       .then((res) => {
-        setEducationList(res.data.education || []);
+        setEducationList(res.data.educations || []);
       })
       .catch((err) => console.error("Error fetching education:", err))
       .finally(() => setLoading(false));
@@ -34,7 +35,11 @@ export default function Education({ userId, canEdit = false }: EducationProps) {
     <div className="education-card">
       <div className="education-header">
         <h1>Education</h1>
-        {canEdit && <button className="addedu-btn">Add Education</button>}
+        {canEdit && (
+          <Link to="/add-education">
+            <button className="addedu-btn">Add Education</button>
+          </Link>
+        )}
       </div>
 
       {loading ? (

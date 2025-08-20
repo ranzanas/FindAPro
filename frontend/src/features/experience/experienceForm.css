@@ -1,0 +1,61 @@
+.experience-form-container {
+  width: 42%;
+  margin: 40px auto;
+  padding: 20px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: -2px 0px 6px 12px rgba(0, 0, 0, 0.25);
+}
+
+.experience-form-container h1 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.experience-form {
+  padding: 2px 40px;
+}
+.experience-form .inputField {
+  margin-bottom: 15px;
+}
+
+.experience-form .inputField p {
+  margin: 24px 0px 5px;
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.experience-form input,
+.experience-form select {
+  width: 100%;
+  padding: 8px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 24px;
+}
+
+.experience-form span {
+  color: red;
+  font-size: 12px;
+}
+
+.buttonBox {
+  text-align: center;
+  display: flex;
+  gap: 10px;
+  margin-top: 41px;
+  width: auto;
+}
+
+.buttonBox button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  background-color: #1c2541;
+  color: white;
+  cursor: pointer;
+}
+
+.buttonBox button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}

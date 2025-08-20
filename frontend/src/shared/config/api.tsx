@@ -27,3 +27,26 @@ export const registerApi = (data: {
 export const searchUsersApi = (search: string) => {
   return axiosInstance.get(`/user/userList${search ? `?name=${search}` : ""}`);
 };
+
+export const addExperienceApi = (data: {
+  jobTitle: string;
+  startDate: string;
+  endDate: string;
+  companyName: string;
+  companyAddress: string;
+  employmentType: string;
+}) => {
+  return axiosInstance.post("/profile/addExperience", data);
+};
+
+export const listMyExperiencesApi = () =>
+  axiosInstance.get("/profile/listExperience");
+
+export const getUserExperiencesApi = (userId: string) =>
+  axiosInstance.get(`/profile/experience/${userId}`);
+
+export const listMyEducationsApi = () =>
+  axiosInstance.get("/profile/listEducation");
+
+export const getUserEducationsApi = (userId: string) =>
+  axiosInstance.get(`/profile/education/${userId}`);

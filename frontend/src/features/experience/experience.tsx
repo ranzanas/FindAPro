@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import axiosInstance from "../../shared/config/axiosinstance";
 import "./experience.css";
+import { Link } from "react-router-dom";
 
 interface IExperience {
   _id: string;
@@ -25,7 +26,7 @@ export default function Experience({
 
   useEffect(() => {
     axiosInstance
-      .get(`/experience/${userId}`)
+      .get(`profile/experience/${userId}`)
       .then((res) => {
         setExperiences(res.data.experiences || []);
       })
@@ -37,7 +38,11 @@ export default function Experience({
     <div className="experience-card">
       <div className="experience-header">
         <h1>Experience</h1>
-        {canEdit && <button className="addexp-btn">Add Experience</button>}
+        {canEdit && (
+          <Link to="/add-experience">
+            <button className="addexp-btn">Add Experience</button>
+          </Link>
+        )}
       </div>
 
       {loading ? (

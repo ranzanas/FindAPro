@@ -43,6 +43,19 @@ export async function getExperiences(req, res) {
   }
 }
 
+export async function getExperiencesByUserId(req, res) {
+  try {
+    const { userId } = req.params;
+    const experiences = await Experience
+      .find({ user: userId });
+
+    return res.status(200).json({ experiences });
+  } catch (err) {
+    console.error("getExperiencesByUserId error:", err);
+    return res.status(500).json({ message: "Server error" });
+  }
+}
+
 export default async function addEducation(req, res) {
   
   try{
@@ -82,6 +95,18 @@ export async function getEducations(req, res) {
     return res.status(200).json({ educations });
   } catch (err) {
     console.error("getEducations error:", err);
+    return res.status(500).json({ message: "Server error" });
+  }
+}
+
+
+export async function getEducationsByUserId(req, res) {
+  try {
+    const { userId } = req.params;
+    const educations = await Education.find({ user: userId })
+    return res.status(200).json({ educations });
+  } catch (err) {
+    console.error("getEducationsByUserId error:", err);
     return res.status(500).json({ message: "Server error" });
   }
 }
