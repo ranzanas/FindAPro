@@ -26,7 +26,20 @@ export default function Home() {
   useEffect(() => {
     searchUsersApi(search)
       .then((res: AxiosResponse<IUserResponse>) => {
-        setUsers(res.data.users);
+        let fetchedUsers = res.data.users;
+
+        const currentUser = JSON.parse(
+          localStorage.getItem("currentUser") || "{}"
+        );
+
+        if (currentUser?._id) {
+          fetchedUsers = [
+            ...fetchedUsers.filter((u) => u._id === currentUser._id), // logged-in user first
+            ...fetchedUsers.filter((u) => u._id !== currentUser._id), // others after
+          ];
+        }
+
+        setUsers(fetchedUsers);
       })
       .catch((err) => {
         console.error("Error fetching users:", err);
