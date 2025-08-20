@@ -72,7 +72,7 @@ export default async function addEducation(req, res) {
 
 export async function getEducations(req, res) {
   try {
-    const userId = req.user?.id; // set by your authMiddleware (JWT)
+    const userId = req.user?.id; 
     if (!userId) return res.status(401).json({ message: "Unauthorized" });
 
     const educations = await Education

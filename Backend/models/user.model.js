@@ -9,10 +9,22 @@ const userSchema = new Schema({
   profession: String,
   username: String,
   password: String,
+
+
+  profilePicture: {
+    url: {
+      type: String,
+    },
+    public_id: {
+      type: String,
+    }
+  },
   createdAt: {
     type: Date,
     default: Date.now
   }
+
+
 });
 
 const User = model('User', userSchema);
