@@ -59,7 +59,11 @@
   color: rgba(255, 255, 255, 0.9);
   font-size: 18px;
 }
-
+.experience-card h2 {
+  color: #fff;
+  margin: 10px 20px;
+  font-size: 22px;
+}
 .expcards-info p:first-of-type {
   display: inline-block;
   padding: 2px 8px;

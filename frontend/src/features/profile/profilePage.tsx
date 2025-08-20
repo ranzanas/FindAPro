@@ -21,6 +21,8 @@ export default function Profile() {
   const { id } = useParams();
   const [user, setUser] = useState<IUser | null>(null);
 
+  const currentUser = JSON.parse(localStorage.getItem("currentUser") || "{}");
+
   useEffect(() => {
     axiosInstance
       .get(`/user/userList?name=${id}`)
@@ -51,16 +53,26 @@ export default function Profile() {
           <div className="address-section">
             <span className="address">{user.address}</span>
           </div>
+
           <div className="actions">
-            <button className="msg-btn">Message</button>
-            <button className="follow-btn">Follow</button>
+            {currentUser?._id === user._id ? (
+              <button className="edit-btn">Edit Profile</button>
+            ) : (
+              <div className="actions">
+                <button className="msg-btn">Message</button>
+                <button className="follow-btn">Follow</button>
+              </div>
+            )}
           </div>
         </div>
       </div>
       <div className="main-section">
         <div className="exp-wrapper">
           <div className="experience-section">
-            <Experience />
+            <Experience
+              userId={user._id}
+              canEdit={currentUser?._id === user._id}
+            />
           </div>
 
           <div className="contact-section">

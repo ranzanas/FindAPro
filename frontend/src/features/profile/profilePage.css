@@ -56,7 +56,8 @@ span.profession {
   gap: 10px;
 }
 .msg-btn,
-.follow-btn {
+.follow-btn,
+.edit-btn {
   padding: 10px 14px;
   font-weight: 600;
   border-radius: 12px;
@@ -71,12 +72,14 @@ span.profession {
 .msg-btn:hover {
   opacity: 0.9;
 }
-.follow-btn {
+.follow-btn,
+.edit-btn {
   background: transparent;
   border-color: rgba(255, 255, 255, 0.4);
   color: white;
 }
-.follow-btn:hover {
+.follow-btn:hover,
+.edit-btn:hover {
   background: rgba(255, 255, 255, 0.08);
 }
 .main-section {
