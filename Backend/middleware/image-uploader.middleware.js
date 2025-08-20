@@ -9,7 +9,7 @@ export const upload = multer({
         const ok = ['image/jpeg', 'image/png'].includes(file.mimetype);
         next(ok? null : new Error('Only JPG and PNG allowed'))
     },
-})
+});
 
 
 export function uploadBufferToCloudinary(buffer, options = {}){
