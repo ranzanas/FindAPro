@@ -1,49 +1,65 @@
+import { useEffect, useState } from "react";
+import axiosInstance from "../../shared/config/axiosinstance";
 import "./education.css";
 
-export default function Education() {
-  const education = [
-    {
-      schoolName: "Islington College",
-      startDate: "2023",
-      endDate: "2026",
-      degreeName: "BSc (Hons) Computing",
-      address: "Kamalpokhari, Kathmandu",
-    },
-    {
-      schoolName: "National School of Sciences (NIST)",
-      startDate: "2020",
-      endDate: "2022",
-      degreeName: "High School",
-      address: "Lainchaour, Kathmandu",
-    },
-    {
-      schoolName: "Fluorescent Secondary School",
-      startDate: "2013",
-      endDate: "2020",
-      degreeName: "Secondary Education",
-      address: "Baniyatar, Kathmandu",
-    },
-  ];
+interface IEducation {
+  _id: string;
+  schoolName: string;
+  startDate: string;
+  endDate?: string;
+  degreeName: string;
+  schoolLocation: string;
+}
+
+interface EducationProps {
+  userId: string; // whose education to show
+  canEdit?: boolean; // whether to show "Add Education" button
+}
+
+export default function Education({ userId, canEdit = false }: EducationProps) {
+  const [educationList, setEducationList] = useState<IEducation[]>([]);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    axiosInstance
+      .get(`/education/${userId}`) // 👉 adjust route to match your backend
+      .then((res) => {
+        setEducationList(res.data.education || []);
+      })
+      .catch((err) => console.error("Error fetching education:", err))
+      .finally(() => setLoading(false));
+  }, [userId]);
+
   return (
     <div className="education-card">
       <div className="education-header">
         <h1>Education</h1>
-        <button className="addedu-btn">Add Education</button>
+        {canEdit && <button className="addedu-btn">Add Education</button>}
       </div>
-      <div className="educard-container">
-        {education.map((edu) => (
-          <div className="edu-card">
-            <div className="educards-info">
-              <h3>{edu.schoolName}</h3>
-              <p>
-                {edu.startDate} - {edu.endDate}
-              </p>
-              <p>{edu.degreeName}</p>
-              <p>{edu.address}</p>
+
+      {loading ? (
+        <p>Loading...</p>
+      ) : educationList.length > 0 ? (
+        <div className="educard-container">
+          {educationList.map((edu) => (
+            <div className="edu-card" key={edu._id}>
+              <div className="educards-info">
+                <h3>{edu.schoolName}</h3>
+                <p>
+                  {new Date(edu.startDate).getFullYear()} -{" "}
+                  {edu.endDate
+                    ? new Date(edu.endDate).getFullYear()
+                    : "Present"}
+                </p>
+                <p>{edu.degreeName}</p>
+                <p>{edu.schoolLocation}</p>
+              </div>
             </div>
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
+      ) : (
+        <h2>No education added yet</h2>
+      )}
     </div>
   );
 }

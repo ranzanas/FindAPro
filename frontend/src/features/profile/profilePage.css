@@ -89,6 +89,7 @@ span.profession {
   margin-top: 15px;
   gap: 20px;
   padding: 10px;
+  height: 100vh;
 }
 .exp-wrapper {
   width: 100%;

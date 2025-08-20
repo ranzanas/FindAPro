@@ -89,7 +89,10 @@ export default function Profile() {
         </div>
 
         <div className="education-section">
-          <Education />
+          <Education
+            userId={user._id}
+            canEdit={currentUser?._id === user._id}
+          />
         </div>
       </div>
     </div>

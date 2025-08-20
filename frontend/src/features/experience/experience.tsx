@@ -13,10 +13,9 @@ interface IExperience {
 }
 
 interface ExperienceProps {
-  userId: string; // whose experience to show
-  canEdit?: boolean; // show Add button if logged-in user views own profile
+  userId: string;
+  canEdit?: boolean;
 }
-
 export default function Experience({
   userId,
   canEdit = false,
@@ -26,7 +25,7 @@ export default function Experience({
 
   useEffect(() => {
     axiosInstance
-      .get(`/experience/${userId}`) // 👉 adjust API route to your backend
+      .get(`/experience/${userId}`)
       .then((res) => {
         setExperiences(res.data.experiences || []);
       })
@@ -50,7 +49,7 @@ export default function Experience({
               <div className="expcards-info">
                 <h3>{exp.jobTitle}</h3>
                 <p>
-                  {new Date(exp.startDate).getFullYear()} –
+                  {new Date(exp.startDate).getFullYear()} -
                   {exp.endDate
                     ? new Date(exp.endDate).getFullYear()
                     : "Present"}
