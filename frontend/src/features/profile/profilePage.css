@@ -5,7 +5,7 @@
 }
 .profile-container {
   width: 100%;
-  background: linear-gradient(180deg, #0b132b 0%, #1c2541 100%);
+  /* background: linear-gradient(180deg, #0b132b 0%, #1c2541 100%); */
 }
 .profile-banner {
   width: 100%;
@@ -76,7 +76,7 @@ span.profession {
 .edit-btn {
   background: transparent;
   border-color: rgba(255, 255, 255, 0.4);
-  color: white;
+  /* color: white; */
 }
 .follow-btn:hover,
 .edit-btn:hover {
@@ -90,6 +90,7 @@ span.profession {
   gap: 20px;
   padding: 10px;
   height: 100vh;
+  color: #1c2541;
 }
 .exp-wrapper {
   width: 100%;
@@ -106,14 +107,15 @@ span.profession {
   height: 150px;
   box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35), 0 0 8px rgba(58, 80, 107, 0.3);
   padding: 15px;
+  border-radius: 15px;
 }
 .contact-header {
-  color: white;
+  /* color: white; */
   margin-bottom: 10px;
 }
 .contact-info ul li {
   list-style-type: none;
-  color: white;
+  /* color: white; */
   font-size: 18px;
   line-height: 1.7;
 }

@@ -9,7 +9,7 @@
 .experience-header {
   width: 100%;
   padding: 10px 20px;
-  color: white;
+  /* color: white; */
   display: flex;
   justify-content: space-between;
 }
@@ -18,13 +18,14 @@
   border-radius: 999px;
   backdrop-filter: blur(4px);
   font-size: 16px;
-  background: transparent;
+  background: #1c2541;
   border-color: rgba(255, 255, 255, 0.4);
   color: white;
   cursor: pointer;
 }
 .addexp-btn:hover {
   background: rgba(255, 255, 255, 0.08);
+  color: #1c2541;
 }
 
 .expcard-container {
@@ -36,12 +37,12 @@
 
 .exp-card {
   width: 100%;
-  background-color: #1c2541;
+  /* background-color: #1c2541; */
   border: 1px solid rgba(255, 255, 255, 0.2);
   border-left: 4px solid #3a506b;
   border-radius: 12px;
   padding: 14px;
-  color: #fff;
+  /* color: #fff; */
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
 }
 
@@ -56,22 +57,23 @@
 
 .expcards-info p {
   margin: 4px 0;
-  color: rgba(255, 255, 255, 0.9);
+  /* color: rgba(255, 255, 255, 0.9); */
   font-size: 18px;
 }
 .experience-card h2 {
-  color: #fff;
+  /* color: #fff; */
   margin: 10px 20px;
   font-size: 22px;
 }
 .expcards-info p:first-of-type {
   display: inline-block;
-  padding: 2px 8px;
+  padding: 4px 10px;
   border-radius: 999px;
   font-size: 14px;
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: #3a506b;
   border: 1px solid rgba(255, 255, 255, 0.2);
   margin-bottom: 6px;
+  color: white;
 }
 .expcards-info p:nth-of-type(2) {
   font-weight: 600;

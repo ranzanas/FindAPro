@@ -7,7 +7,7 @@ export const upload = multer({
     limits: {fileSize: 5*1024*1024},
     fileFileter: (_req, file, next) => {
         const ok = ['image/jpeg', 'image/png'].includes(file.mimetype);
-        next(ok? null : new Error('Only JPG and PNG allowed'))
+        next(ok? null : new Error('Only JPG and PNG allowed'), ok)
     },
 });
 
