@@ -34,8 +34,8 @@ export default function Home() {
 
         if (currentUser?._id) {
           fetchedUsers = [
-            ...fetchedUsers.filter((u) => u._id === currentUser._id), // logged-in user first
-            ...fetchedUsers.filter((u) => u._id !== currentUser._id), // others after
+            ...fetchedUsers.filter((u) => u._id === currentUser._id),
+            ...fetchedUsers.filter((u) => u._id !== currentUser._id),
           ];
         }
 

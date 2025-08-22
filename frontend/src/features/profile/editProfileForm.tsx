@@ -1,9 +1,8 @@
-// src/features/profile/EditProfileForm.tsx
 import { useEffect } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate, useParams } from "react-router-dom";
 import axiosInstance from "../../shared/config/axiosinstance";
-import { updateUserApi } from "../../shared/config/api"; // your api file
+import { updateUserApi } from "../../shared/config/api";
 import "./editProfileForm.css";
 
 interface IEditForm {
@@ -26,7 +25,6 @@ export default function EditProfileForm() {
     reset,
   } = useForm<IEditForm>();
 
-  // load current user details to prefill
   useEffect(() => {
     axiosInstance
       .get(`/user/userList?name=${id}`)
@@ -48,7 +46,6 @@ export default function EditProfileForm() {
     try {
       await updateUserApi(id!, data);
 
-      // update local storage if editing self
       const current = localStorage.getItem("currentUser");
       if (current) {
         const me = JSON.parse(current);
@@ -58,7 +55,7 @@ export default function EditProfileForm() {
         }
       }
 
-      navigate(-1); // back to profile
+      navigate(-1);
     } catch (err) {
       console.error("Error updating profile:", err);
     }
