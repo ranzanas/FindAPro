@@ -73,3 +73,18 @@ export const updateProfilePicApi = (file: File | Blob) => {
     headers: { "Content-Type": "multipart/form-data" },
   });
 };
+
+export const updateExperienceApi = (
+  id: string,
+  data: {
+    jobTitle?: string;
+    startDate?: string;
+    endDate?: string;
+    companyName?: string;
+    companyAddress?: string;
+    employmentType?: string;
+  }
+) => axiosInstance.patch(`/experience/${id}`, data);
+
+export const deleteExperienceApi = (id: string) =>
+  axiosInstance.delete(`/experience/${id}`);

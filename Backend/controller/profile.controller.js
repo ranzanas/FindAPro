@@ -56,7 +56,64 @@ export async function getExperiencesByUserId(req, res) {
   }
 }
 
-export default async function addEducation(req, res) {
+
+
+
+
+export async function editExperience(req, res) {
+  try {
+    const userId = req.user?.id;           
+    if (!userId) return res.status(401).json({ message: "Unauthorized" });
+
+    const { id } = req.params;                  
+    const { jobTitle, startDate, endDate, companyName, companyAddress, employmentType } = req.body;
+
+    
+    const updated = await Experience.findOneAndUpdate(
+      { _id: id, user: userId },
+      {
+        $set: {
+          jobTitle,
+          startDate,
+          endDate,
+          companyName,
+          companyAddress,
+          employmentType,
+        },
+      },
+      { new: true } 
+    );
+
+    if (!updated) return res.status(404).json({ message: "Experience not found" });
+
+    return res.status(200).json({ message: "Experience updated successfully", experience: updated });
+  } catch (err) {
+    console.error("editExperience error:", err);
+    return res.status(500).json({ message: "Server error" });
+  }
+}
+
+
+export async function deleteExperience(req, res) {
+  try {
+    const userId = req.user?.id;
+    if (!userId) return res.status(401).json({ message: "Unauthorized" });
+
+    const { id } = req.params;
+
+    const deleted = await Experience.findOneAndDelete({ _id: id, user: userId });
+
+    if (!deleted) return res.status(404).json({ message: "Experience not found" });
+
+    return res.status(200).json({ message: "Experience deleted successfully" });
+  } catch (err) {
+    console.error("deleteExperience error:", err);
+    return res.status(500).json({ message: "Server error" });
+  }
+}
+
+
+export  async function addEducation(req, res) {
   
   try{
     const userId = req.user?.id;

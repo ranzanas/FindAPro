@@ -27,14 +27,39 @@
   background: rgba(255, 255, 255, 0.08);
   color: #1c2541;
 }
+.icon-btn {
+  background: transparent;
+  border: none;
+  padding: 6px;
+  border-radius: 8px;
+  cursor: pointer;
+  color: #1c2541;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
 
+.icon-btn:hover {
+  background: rgba(0, 0, 0, 0.07);
+}
+
+.icon-btn.danger {
+  color: #e11d48;
+}
+.icon-btn.danger:hover {
+  background: rgba(225, 29, 72, 0.12);
+}
 .expcard-container {
   display: flex;
   flex-direction: column;
   gap: 16px;
   padding: 12px 16px;
 }
-
+.expcard-top {
+  display: flex;
+  justify-content: space-between;
+}
 .exp-card {
   width: 100%;
   /* background-color: #1c2541; */
