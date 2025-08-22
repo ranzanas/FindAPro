@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import "./profilePage.css";
 import userFemale from "../../assets/images/userFemale.jpg";
 import Experience from "../experience/experience";
@@ -18,6 +18,7 @@ interface IUser {
 }
 
 export default function Profile() {
+  const navigate = useNavigate();
   const { id } = useParams();
   const [user, setUser] = useState<IUser | null>(null);
 
@@ -56,7 +57,12 @@ export default function Profile() {
 
           <div className="actions">
             {currentUser?._id === user._id ? (
-              <button className="edit-btn">Edit Profile</button>
+              <button
+                className="edit-btn"
+                onClick={() => navigate(`/edit-profile/${user._id}`)}
+              >
+                Edit Profile
+              </button>
             ) : (
               <div className="actions">
                 <button className="msg-btn">Message</button>

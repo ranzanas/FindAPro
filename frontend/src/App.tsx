@@ -8,6 +8,7 @@ import AuthGuard from "./shared/guards/authGuard";
 import Profile from "./features/profile/profilePage";
 import ExperienceForm from "./features/experience/experienceForm";
 import EducationForm from "./features/education/educationForm";
+import EditProfileForm from "./features/profile/editProfileForm";
 
 function App() {
   return (
@@ -56,6 +57,8 @@ function App() {
 
       <Route path="/add-experience" element={<ExperienceForm />} />
       <Route path="/add-education" element={<EducationForm />} />
+
+      <Route path="/edit-profile/:id" element={<EditProfileForm />} />
     </Routes>
   );
 }

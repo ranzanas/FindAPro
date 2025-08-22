@@ -72,11 +72,13 @@ span.profession {
 .msg-btn:hover {
   opacity: 0.9;
 }
-.follow-btn,
-.edit-btn {
+.follow-btn {
   background: transparent;
   border-color: rgba(255, 255, 255, 0.4);
   /* color: white; */
+}
+.edit-btn {
+  background: white;
 }
 .follow-btn:hover,
 .edit-btn:hover {

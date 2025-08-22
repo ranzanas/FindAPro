@@ -50,3 +50,17 @@ export const listMyEducationsApi = () =>
 
 export const getUserEducationsApi = (userId: string) =>
   axiosInstance.get(`/profile/education/${userId}`);
+
+export const updateUserApi = (
+  userId: string,
+  data: {
+    firstName: string;
+    lastName: string;
+    email?: string;
+    phone: string;
+    address?: string;
+    profession?: string;
+  }
+) => {
+  return axiosInstance.patch(`/user/editUser/${userId}`, data);
+};
