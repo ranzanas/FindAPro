@@ -64,3 +64,12 @@ export const updateUserApi = (
 ) => {
   return axiosInstance.patch(`/user/editUser/${userId}`, data);
 };
+
+export const updateProfilePicApi = (file: File | Blob) => {
+  const formData = new FormData();
+  formData.append("image", file);
+
+  return axiosInstance.patch("/user/uploadProfilePic", formData, {
+    headers: { "Content-Type": "multipart/form-data" },
+  });
+};
