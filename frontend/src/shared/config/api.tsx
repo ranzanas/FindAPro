@@ -88,3 +88,17 @@ export const updateExperienceApi = (
 
 export const deleteExperienceApi = (id: string) =>
   axiosInstance.delete(`/experience/${id}`);
+
+export const updateEducationApi = (
+  id: string,
+  data: {
+    schoolName: string;
+    startDate: string;
+    endDate?: string;
+    degreeName: string;
+    schoolLocation: string;
+  }
+) => axiosInstance.patch(`/education/${id}`, data);
+
+export const deleteEducationApi = (id: string) =>
+  axiosInstance.delete(`/education/${id}`);

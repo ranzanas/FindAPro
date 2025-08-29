@@ -10,6 +10,7 @@ import ExperienceForm from "./features/experience/experienceForm";
 import EducationForm from "./features/education/educationForm";
 import EditProfileForm from "./features/profile/editProfileForm";
 import EditExperienceForm from "./features/experience/editExperience";
+import EditEducationForm from "./features/education/editEducation";
 
 function App() {
   return (
@@ -61,6 +62,7 @@ function App() {
 
       <Route path="/edit-profile/:id" element={<EditProfileForm />} />
       <Route path="/edit-experience/:expId" element={<EditExperienceForm />} />
+      <Route path="/edit-education/:eduId" element={<EditEducationForm />} />
     </Routes>
   );
 }
