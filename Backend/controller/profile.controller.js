@@ -167,3 +167,57 @@ export async function getEducationsByUserId(req, res) {
     return res.status(500).json({ message: "Server error" });
   }
 }
+
+
+
+export async function editEducation(req, res) {
+  try {
+    const userId = req.user?.id;
+    if (!userId) return res.status(401).json({ message: "Unauthorized" });
+
+    const { id } = req.params;
+    const { schoolName, startDate, endDate, degreeName, schoolLocation } = req.body;
+
+    const updated = await Education.findOneAndUpdate(
+      { _id: id, user: userId },
+      {
+        $set: {
+          schoolName,
+          startDate,
+          endDate,
+          degreeName,
+          schoolLocation,
+        },
+      },
+      { new: true }
+    );
+
+    if (!updated) return res.status(404).json({ message: "Education not found" });
+
+    return res
+      .status(200)
+      .json({ message: "Education updated successfully", education: updated });
+  } catch (err) {
+    console.error("editEducation error:", err);
+    return res.status(500).json({ message: "Server error" });
+  }
+}
+
+
+export async function deleteEducation(req, res) {
+  try {
+    const userId = req.user?.id;
+    if (!userId) return res.status(401).json({ message: "Unauthorized" });
+
+    const { id } = req.params;
+
+    const deleted = await Education.findOneAndDelete({ _id: id, user: userId });
+
+    if (!deleted) return res.status(404).json({ message: "Education not found" });
+
+    return res.status(200).json({ message: "Education deleted successfully" });
+  } catch (err) {
+    console.error("deleteEducation error:", err);
+    return res.status(500).json({ message: "Server error" });
+  }
+}
