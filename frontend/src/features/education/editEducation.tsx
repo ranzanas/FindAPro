@@ -115,9 +115,16 @@ export default function EditEducationForm() {
           )}
         </div>
 
-        <div className="buttonBox">
+        <div className="editprofile-buttons">
           <button type="submit" disabled={isSubmitting}>
             Save Changes
+          </button>
+          <button
+            type="button"
+            className="cancel-btn"
+            onClick={() => navigate(-1)}
+          >
+            Cancel
           </button>
         </div>
       </form>
