@@ -131,10 +131,7 @@ export default function Profile() {
                 Edit Profile
               </button>
             ) : (
-              <div className="actions">
-                <button className="msg-btn">Message</button>
-                <button className="follow-btn">Follow</button>
-              </div>
+              <div className="actions"></div>
             )}
           </div>
         </div>

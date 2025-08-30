@@ -64,7 +64,6 @@
   object-fit: cover;
 }
 .details-section {
-  width: 600px;
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -72,11 +71,11 @@
 }
 .profession-section {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+
   gap: 10px;
 }
 span.profession {
-  display: inline-block;
   padding: 6px 10px;
   border-radius: 999px;
   background: rgba(255, 255, 255, 0.15);
@@ -87,6 +86,7 @@ span.profession {
 .username,
 .address {
   font-size: 18px;
+  margin-left: 10px;
 }
 .actions {
   display: flex;
